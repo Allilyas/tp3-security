@@ -36,7 +36,7 @@ L'architecture de l'application est divisée en plusieurs couches logiques : ent
 La classe `Product` représente les données des produits qui seront stockées en base de données. Elle utilise des annotations de validation (`@NotEmpty`, `@Min`) pour assurer l'intégrité des données.
 
 ```java
-package com.youssef.springweb.entities;
+package com.ilyas.springweb.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -64,7 +64,7 @@ public class Product {
 L'interface `ProductRepository`, qui étend `JpaRepository`, permet de bénéficier sans effort des opérations CRUD et de requêtes plus complexes.
 
 ```java
-package com.youssef.springweb.reposetories;
+package com.ilyas.springweb.reposetories;
 
 import entities.com.ilyas.springweb.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -78,7 +78,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 Le `ProductController` gère les requêtes HTTP, interagit avec la couche service pour manipuler les données, et retourne les vues Thymeleaf appropriées.
 
 ```java
-package com.youssef.springweb.web;
+package com.ilyas.springweb.web;
 
 @Controller
 @AllArgsConstructor
@@ -115,7 +115,7 @@ public class ProductController {
 Le fichier `SecurityConfig.java` définit les règles d'authentification et d'autorisation. Pour ce TP, une authentification en mémoire (`InMemoryUserDetailsManager`) a été utilisée pour définir des utilisateurs et leurs rôles.
 
 ```java
-package com.youssef.springweb.security;
+package com.ilyas.springweb.security;
 
 @Configuration
 @EnableWebSecurity
